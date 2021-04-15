@@ -1,23 +1,18 @@
 apiVersion: v1
 appVersion: 2.2.1
 description: An open source trusted cloud native registry that stores, signs, and
-  scans content
+  scans content (based on harbor)
 engine: gotpl
 home: https://github.com/tmax-cloud
-icon: https://raw.githubusercontent.com/goharbor/website/master/static/img/logos/harbor-icon-color.png
+icon: https://raw.githubusercontent.com/tmax-cloud/HyperRegistry/master/icons/chart.png
 keywords:
 - docker
 - registry
 - harbor
 maintainers:
-- email: yinw@vmware.com
-  name: Wenkai Yin
-- email: hweiwei@vmware.com
-  name: Weiwei He
-- email: dengq@vmware.com
-  name: Qian Deng
+- email: kyunghoon_min@tmax.co.kr
+  name: kyunghoon min
 name: HyperRegistry
 sources:
-- https://github.com/goharbor/harbor
-- https://github.com/goharbor/harbor-helm
+- https://github.com/tmax-cloud/HyperRegistry
 version: 5.0.0

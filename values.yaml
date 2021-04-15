@@ -387,7 +387,7 @@ nginx:
 portal:
   image:
     repository: kyunghoon451/hyper_registry_portal
-    tag: v2.2.1
+    tag: v5.0.1
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   replicas: 1
