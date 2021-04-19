@@ -6,7 +6,7 @@ entries:
     created: "2021-04-12T11:41:54.182393197+09:00"
     description: An open source trusted cloud native registry that stores, signs, and scans content
     digest: 3024f67184e122c3528f0f9749156f24d99b113540dad3f0dcea3fabdabf0dae
-    home: https://github.com/tmax-cloud
+    home: https://github.com/tmax-cloud/HyperRegistry-Chart
     icon: https://raw.githubusercontent.com/tmax-cloud/HyperRegistry/master/icons/chart.png
     keywords:
     - docker
