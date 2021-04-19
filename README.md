@@ -1,3 +1,3 @@
 # HyperRegistry-Chart
 
-This repository works as helm-chart repository for HyperReigstry Chart
+This repository works as a helm-chart repository for HyperReigstry Chart
