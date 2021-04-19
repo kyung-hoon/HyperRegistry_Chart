@@ -386,7 +386,7 @@ nginx:
 
 portal:
   image:
-    repository: kyunghoon451/hyper_registry_portal
+    repository: tmaxcloudck/hyper-registry-portal
     tag: v5.0.1
   # set the service account to be used, default if left empty
   serviceAccountName: ""
