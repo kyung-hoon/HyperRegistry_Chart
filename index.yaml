@@ -1,11 +1,11 @@
 apiVersion: v1
 entries:
-  hyper-registry:
+  HyperRegistry:
   - apiVersion: v1
     appVersion: 2.2.1
-    created: "2021-04-20T10:13:03.399649711+09:00"
+    created: "2021-04-20T10:21:50.773235016+09:00"
     description: An open source trusted cloud native registry that stores, signs, and scans content (based on harbor)
-    digest: 3212e18cbaea2ad44e1cd0b1ea42c29833f58f9d7f20c86b01b7eb7e3b653918
+    digest: 8e3c43e9a82c1a2de5022d8f5feebd50fb44b5575c8a723ff923c594162a6e50
     home: https://github.com/tmax-cloud
     icon: https://raw.githubusercontent.com/tmax-cloud/HyperRegistry/master/icons/hyperregistry-logo.png
     keywords:
@@ -15,10 +15,10 @@ entries:
     maintainers:
     - email: kyunghoon_min@tmax.co.kr
       name: kyunghoon min
-    name: hyper-registry
+    name: HyperRegistry
     sources:
     - https://github.com/tmax-cloud/HyperRegistry
     urls:
-    - https://tmax-cloud.github.io/HyperRegistry-Chart/HR-Chart/hyper-registry-5.0.0.tgz
+    - https://tmax-cloud.github.io/HyperRegistry-Chart/HR-Chart/HyperRegistry-5.0.0.tgz
     version: 5.0.0
-generated: "2021-04-20T10:13:03.389772805+09:00"
+generated: "2021-04-20T10:21:50.753272091+09:00"
