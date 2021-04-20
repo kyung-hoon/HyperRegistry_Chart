@@ -12,7 +12,7 @@ keywords:
 maintainers:
 - email: kyunghoon_min@tmax.co.kr
   name: kyunghoon min
-name: HyperRegistry
+name: hyper-registry
 sources:
 - https://github.com/tmax-cloud/HyperRegistry
 version: 5.0.0
