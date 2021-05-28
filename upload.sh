@@ -45,8 +45,8 @@ check_client
 check_savedir
 
 for IMG in "${IMGS[@]}"; do
-  echo "Load image from ${SAVEDIR}/${IMG}:${TAG}.tar"
-  ${CLIENT} load < ${SAVEDIR}/${IMG}:${TAG}.tar
+  echo "Load image from ${SAVEDIR}/${IMG}_${TAG}.tar"
+  ${CLIENT} load < ${SAVEDIR}/${IMG}_${TAG}.tar
 
   echo "Tag image ${REG}/${IMG}:${TAG} to ${TARGETREG}/${IMG}:${TAG}"
   ${CLIENT} tag ${REG}/${IMG}:${TAG} ${TARGETREG}/${IMG}:${TAG}

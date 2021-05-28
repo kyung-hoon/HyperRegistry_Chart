@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set +e
+set -e
 
 REG="docker.io/goharbor"
 IMGS=( "nginx-photon" "harbor-portal" "harbor-core" "harbor-jobservice"
@@ -30,7 +30,7 @@ check_savedir
 
 for IMG in "${IMGS[@]}"; do
   echo "Pulling image ${REG}/${IMG}:${TAG}"
-  ${CLIENT} pull ${REG}/${IMG}:${TAG}
-  echo "Save image to ${SAVEDIR}/${IMG}:${TAG}.tar"
-  ${CLIENT} save ${REG}/${IMG}:${TAG} -o ${SAVEDIR}/${IMG}:${TAG}.tar
+  ${CLIENT} pull "${REG}/${IMG}:${TAG}"
+  echo "Save image to ${SAVEDIR}/${IMG}_${TAG}.tar"
+  ${CLIENT} save "${REG}/${IMG}:${TAG}" -o "${SAVEDIR}/${IMG}_${TAG}.tar"
 done
