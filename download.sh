@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set +e
 
-REG="goharbor"
+REG="docker.io/goharbor"
 IMGS=( "nginx-photon" "harbor-portal" "harbor-core" "harbor-jobservice"
-"registry-photon" "harbor-registryct" "chartmuseum-photon" "trivy-adapter-photon"
+"registry-photon" "harbor-registryctl" "chartmuseum-photon" "trivy-adapter-photon"
 "notary-server-photon" "notary-signer-photon" "harbor-db" "redis-photon" "harbor-exporter" )
 TAG="dev"
 SAVEDIR="downloads"
