@@ -14,7 +14,7 @@
    git clone -b 5.0 https://github.com/tmax-cloud/HyperRegistry-Chart
    cd HyperRegistry-Chart
    chmod +x download.sh
-   ./download.sh <tag> <download_dir> # ./download.sh v2.2.2 ./downloads
+   ./download.sh <download_dir> # ./download.sh ./downloads
    # Download helm from above prerequite link (kubectl은 이미 설치되어있다고 가정)
    ```
 
@@ -31,18 +31,17 @@
    ```bash
    cd <복사한_git_repo_경로>
    chmod +x ./upload.sh
-   ./upload.sh ./downloads <tag> <download_dir> <registry> # ./update.sh v2.2.2 ./downloads 172.22.11.2:5000
+   ./upload.sh ./downloads <download_dir> <registry> # ./update.sh ./downloads 172.22.11.2:5000
    ```
 
 6. Helm 차트 준비
    ```bash
    sudo cp <downloaded_helm> /usr/local/bin
    sed 's/__REPO__/<registry>/' values.yaml.tpl > values.yaml 
-   sed -i 's/__TAG__/<tag>/' values.yaml
-   tar -zcvf hyperregistry-<tag>.tgz .
+   tar -zcvf hyperregistry-v2.2.2.tgz .
    helm repo index .
    mkdir chart-repository
-   mv index.yaml hyperregistry-<tag>.tgz chart-repository
+   mv index.yaml hyperregistry-v2.2.2.tgz chart-repository
    ```
 
 7. 폐쇄망 환경에 Helm 서버 설치

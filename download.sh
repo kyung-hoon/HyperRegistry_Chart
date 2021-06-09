@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 set -e
 
-REG="docker.io/goharbor"
-IMGS=( "nginx-photon" "harbor-portal" "harbor-core" "harbor-jobservice"
+REG="docker.io/tmaxcloudck"
+IMGS=( "nginx-photon" "hyperregistry-portal" "harbor-core" "harbor-jobservice"
 "registry-photon" "harbor-registryctl" "chartmuseum-photon" "trivy-adapter-photon"
 "notary-server-photon" "notary-signer-photon" "harbor-db" "redis-photon" "harbor-exporter" )
 CLIENT=${CLI:=podman}
 
 function usage() {
-  echo "[Usage]: CLI=<registry_client(default: podman)> ./download.sh <tag>(default: dev) <save_dir>(default: downloads)"
-  echo "    ex): CLI=docker ./download.sh v2.2.2 archive"
+  echo "[Usage]: CLI=<registry_client(default: podman)> ./download.sh <save_dir>(default: downloads)"
+  echo "    ex): CLI=docker ./download.sh archive"
 }
 
 function check_client() {
@@ -28,15 +28,8 @@ function check_savedir() {
   fi
 }
 
-if [ -z ${1} ];
-then
-  echo "[ERROR]: tag not specified."
-  usage
-  exit 1
-fi
-
-TAG=${1:=dev}
-SAVEDIR=${2:=downloads}
+TAG=v2.2.2
+SAVEDIR=${1=downloads}
 
 check_client
 check_savedir

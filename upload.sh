@@ -1,32 +1,25 @@
 #!/usr/bin/env bash
 set -e
 
-REG="goharbor"
-IMGS=( "nginx-photon" "harbor-portal" "harbor-core" "harbor-jobservice"
+REG="tmaxcloudck"
+IMGS=( "nginx-photon" "hyperregistry-portal" "harbor-core" "harbor-jobservice"
 "registry-photon" "harbor-registryctl" "chartmuseum-photon" "trivy-adapter-photon"
 "notary-server-photon" "notary-signer-photon" "harbor-db" "redis-photon" "harbor-exporter" )
 
 
 function usage() {
-  echo "[Usage]: CLI=<registry_client(default: podman)> ./upload.sh <tag> <archive_dir_path> <registry_domain>"
-  echo "    ex): CLI=docker ./upload.sh v0.0.1 ./downloads 172.22.11.2:5000"
+  echo "[Usage]: CLI=<registry_client(default: podman)> ./upload.sh <archive_dir_path> <registry_domain>"
+  echo "    ex): CLI=docker ./upload.sh ./downloads 172.22.11.2:5000"
 }
 
 if [ -z ${1} ];
-then
-  echo "[ERROR]: tag not specified."
-  usage
-  exit 1
-fi
-
-if [ -z ${2} ];
 then
   echo "[ERROR]: saved directory specified."
   usage
   exit 1
 fi
 
-if [ -z ${3} ];
+if [ -z ${2} ];
 then
   echo "[ERROR]: target registry not specified."
   usage
@@ -34,9 +27,9 @@ then
 fi
 
 CLIENT=${CLI:=podman}
-TAG=${1}
-SAVEDIR=${2}
-TARGETREG=${3}
+TAG=v2.2.2
+SAVEDIR=${1}
+TARGETREG=${2}
 
 function check_client() {
   if [ ! -e "$(which ${CLIENT})" ]
