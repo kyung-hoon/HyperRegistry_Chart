@@ -371,7 +371,7 @@ proxy:
 nginx:
   image:
     repository: __REPO__/nginx-photon
-    tag: v2.2.1
+    tag: __TAG__
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   replicas: 1
@@ -388,7 +388,7 @@ nginx:
 portal:
   image:
     repository: __REPO__/harbor-portal
-    tag: v5.0.1
+    tag: __TAG__
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   replicas: 1
@@ -405,7 +405,7 @@ portal:
 core:
   image:
     repository: __REPO__/harbor-core
-    tag: v2.2.1
+    tag: __TAG__
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   replicas: 1
@@ -439,7 +439,7 @@ core:
 jobservice:
   image:
     repository: __REPO__/harbor-jobservice
-    tag: v2.2.1
+    tag: __TAG__
   replicas: 1
   # set the service account to be used, default if left empty
   serviceAccountName: ""
@@ -470,7 +470,7 @@ registry:
   registry:
     image:
       repository: __REPO__/registry-photon
-      tag: v2.2.1
+      tag: __TAG__
     # resources:
     #  requests:
     #    memory: 256Mi
@@ -478,7 +478,7 @@ registry:
   controller:
     image:
       repository: __REPO__/harbor-registryctl
-      tag: v2.2.1
+      tag: __TAG__
 
     # resources:
     #  requests:
@@ -525,7 +525,7 @@ chartmuseum:
   absoluteUrl: false
   image:
     repository: __REPO__/chartmuseum-photon
-    tag: v2.2.1
+    tag: __TAG__
   replicas: 1
   # resources:
   #  requests:
@@ -544,7 +544,7 @@ trivy:
     # repository the repository for Trivy adapter image
     repository: __REPO__/trivy-adapter-photon
     # tag the tag for Trivy adapter image
-    tag: v2.2.1
+    tag: __TAG__
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   # replicas the number of Pod replicas
@@ -601,7 +601,7 @@ notary:
     serviceAccountName: ""
     image:
       repository: __REPO__/notary-server-photon
-      tag: v2.2.1
+      tag: __TAG__
     replicas: 1
     # resources:
     #  requests:
@@ -617,7 +617,7 @@ notary:
     serviceAccountName: ""
     image:
       repository: __REPO__/notary-signer-photon
-      tag: v2.2.1
+      tag: __TAG__
     replicas: 1
     # resources:
     #  requests:
@@ -645,7 +645,7 @@ database:
     serviceAccountName: ""
     image:
       repository: __REPO__/harbor-db
-      tag: v2.2.1
+      tag: __TAG__
     # The initial superuser password for internal database
     password: "changeit"
     # resources:
@@ -690,7 +690,7 @@ redis:
     serviceAccountName: ""
     image:
       repository: __REPO__/redis-photon
-      tag: v2.2.1
+      tag: __TAG__
     # resources:
     #  requests:
     #    memory: 256Mi
@@ -726,7 +726,7 @@ exporter:
     serviceAccountName: ""
     image:
       repository: __REPO__/harbor-exporter
-      tag: v2.2.1
+      tag: __TAG__
     nodeSelector: {}
     tolerations: []
     affinity: {}

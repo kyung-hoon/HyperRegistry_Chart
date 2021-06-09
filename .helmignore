@@ -1,1 +1,7 @@
-.git/
+.git
+.md
+.tgz
+.sh
+.tpl
+
+.idea

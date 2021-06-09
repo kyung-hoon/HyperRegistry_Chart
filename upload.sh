@@ -5,14 +5,28 @@ REG="goharbor"
 IMGS=( "nginx-photon" "harbor-portal" "harbor-core" "harbor-jobservice"
 "registry-photon" "harbor-registryctl" "chartmuseum-photon" "trivy-adapter-photon"
 "notary-server-photon" "notary-signer-photon" "harbor-db" "redis-photon" "harbor-exporter" )
-TAG="dev"
+
 
 function usage() {
-  echo "[Usage]: CLI=<registry_client(default: podman)> ./upload.sh <download_directory> <target_repo>"
-  echo "    ex): CLI=docker ./upload.sh ./downloads docker.io/goharbor"
+  echo "[Usage]: CLI=<registry_client(default: podman)> ./upload.sh <tag> <archive_dir_path> <registry_domain>"
+  echo "    ex): CLI=docker ./upload.sh v0.0.1 ./downloads 172.22.11.2:5000"
 }
 
+if [ -z ${1} ];
+then
+  echo "[ERROR]: tag not specified."
+  usage
+  exit 1
+fi
+
 if [ -z ${2} ];
+then
+  echo "[ERROR]: saved directory specified."
+  usage
+  exit 1
+fi
+
+if [ -z ${3} ];
 then
   echo "[ERROR]: target registry not specified."
   usage
@@ -20,8 +34,9 @@ then
 fi
 
 CLIENT=${CLI:=podman}
-SAVEDIR=${1:=downloads}
-TARGETREG=${2}
+TAG=${1}
+SAVEDIR=${2}
+TARGETREG=${3}
 
 function check_client() {
   if [ ! -e "$(which ${CLIENT})" ]
