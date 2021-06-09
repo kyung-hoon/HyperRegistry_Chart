@@ -53,7 +53,8 @@
    ```bash
    helm repo add hyperregistry <helm_server> # helm repo add hyperregistry http://172.22.11.2:8080
    helm repo update
-   helm install <name> hyperregistry/HyperRegistry 
+   vi value.yml # Configure on your needs
+   helm install <name> hyperregistry/HyperRegistry -f value.yaml 
    ```
 
 ## Trouble-Shoting
