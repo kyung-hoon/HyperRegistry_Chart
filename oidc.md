@@ -2,7 +2,7 @@
 
 ### 1. OIDC 클라이언트 등록
     
-1. HyperAuth에 접속 및 로그인
+1. HyperAuth에 접속
 2. Realm 생성
 3. 클라이언트 생성
    1. (LNB) Clients > Create
@@ -15,7 +15,7 @@
 
 ### 2. Harbor에 OIDC 설정하기
 
-1. Harbor 접속 및 관리자로 로그인
+1. Harbor 접속 및 관리자 로그인(admin/ admin)
 2. (LNB) Administration > Configuration 클릭
 3. Auth Mode: OIDC 선택
 4. 다음 설정값 입력

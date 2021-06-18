@@ -64,6 +64,8 @@
           * notary.harbor.domain -> notary.harbor.172.22.11.2.nip.io
         * externalURL
           * https://core.harbor.domain -> https://core.harbor.172.22.11.2.nip.io
+      - ingress.class 추가
+       
    3. 기본 스토리지클래스(default) 확인
       ```bash
       kubectl get storageclass
