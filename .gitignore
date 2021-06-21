@@ -1,0 +1,5 @@
+docs
+*.swo
+*.swp
+
+.idea

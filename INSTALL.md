@@ -38,7 +38,7 @@
 6. Helm 차트 준비
    ```bash
    sudo cp <downloaded_helm> /usr/local/bin
-   sed 's/__REPO__/<registry>/' values.yaml.tpl > values.yaml 
+   sed 's/__REPO__/<registry>/' template.yaml > values.yaml 
    tar -zcvf hyperregistry-v2.2.2.tgz .
    helm repo index .
    mkdir chart-repository
