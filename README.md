@@ -2,17 +2,10 @@
 This is helm repository for HyperReigstry
 
 ## Installation
-* [폐쇄망에서 구축하는 방법](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/INSTALL.md)
-* [HyperAuth OIDC 연동하는 방법](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/oidc.md)
+* [폐쇄망 환경 준비](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/INSTALL.md)
+* [설치](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/INSTALL.md)
+* [HyperAuth OIDC 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/oidc.md)
 
-```bash
-helm repo add [REPO] https://tmax-cloud.github.io/HyperRegistry-Chart/
-helm repo update
-helm show values [REPO]/HyperRegistry > values.yaml
-# edit domain in values.yaml
-vi values.yaml
-helm install [RELAESE] [REPO]/HyperRegistry -f values.yaml
-```
 
 ## Usage
 ### 레지스트리 생성 및 설정하기 

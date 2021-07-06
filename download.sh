@@ -1,5 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -e
+
 
 REG="docker.io/tmaxcloudck"
 IMGS=( "nginx-photon" "hyperregistry-portal" "harbor-core" "harbor-jobservice"
@@ -34,9 +35,13 @@ SAVEDIR=${1=downloads}
 check_client
 check_savedir
 
+RED='\033[0;31m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
 for IMG in "${IMGS[@]}"; do
-  echo "Pulling image ${REG}/${IMG}:${TAG}"
+  echo -e  "${BLUE}Pulling image ${REG}/${IMG}:${TAG}${NC}"
   ${CLIENT} pull "${REG}/${IMG}:${TAG}"
-  echo "Save image to ${SAVEDIR}/${IMG}_${TAG}.tar"
   ${CLIENT} save "${REG}/${IMG}:${TAG}" -o "${SAVEDIR}/${IMG}_${TAG}.tar"
+  echo -e  "${RED}Saved to ${SAVEDIR}/${IMG}_${TAG}.tar${NC}"
 done
