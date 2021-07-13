@@ -516,6 +516,16 @@ registry:
       # The secret key that should be present is CLOUDFRONT_KEY_DATA, which should be the encoded private key
       # that allows access to CloudFront
       privateKeySecret: "my-secret"
+  
+  notifications:
+    enabled: true
+    endpoints:
+      - name: kraken
+        disabled: false
+        url: http://proxy.kraken.domain/registry/notification
+        timeout: 3000ms
+        threshold: 5
+        backoff: 1s
 
 chartmuseum:
   enabled: true

@@ -201,6 +201,19 @@ data:
     compatibility:
       schema1:
         enabled: true
+    {{- if .Values.registry.notifications.enabled }}
+    {{- $endpoints := .Values.registry.notifications.endpoints }}
+    notifications:
+      endpoints:
+        {{- range $endpoints }}
+        - name: {{ .name }}
+          disabled: {{ .disabled }}
+          url: {{ .url }}
+          timeout: {{ .timeout }}
+          threshold: {{ .threshold }}
+          backoff: {{ .backoff }}
+        {{- end }}    
+    {{- end }}
     
     {{- if .Values.registry.middleware.enabled }}
     {{- $middleware := .Values.registry.middleware }}
