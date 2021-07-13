@@ -7,7 +7,7 @@ This is helm repository for HyperReigstry
 - [폐쇄망 환경 준비](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/INSTALL.md#폐쇄망에서-설치를-위한-환경-준비하기)
 - [설치](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/INSTALL.md#설치)
 - [HyperAuth OIDC 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/oidc.md)
-- [P2P Preheat 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/kraken/KRAKEN_INSTALL.md)
+- [P2P Preheat 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/KRAKEN_GUIDE.md)
 
 ## Usage
 

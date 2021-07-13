@@ -68,7 +68,7 @@
    2. 파라미터 설정
       - Provider: Kraken
       - Name: 원하는 이름 설정
-      - EndPoint: http://<kraken-proxy-ingress endpoint>
+      - EndPoint: http://<인그레스 kraken-proxy-ingress endpoint>
       - Auth Mod: None
       - Options: Skip certificate verification 체크
    3. Test connection 후 OK 클릭
