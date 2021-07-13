@@ -3,7 +3,7 @@ set -e
 
 
 REG="docker.io/tmaxcloudck"
-IMGS=( "kraken-agent" "kraken-build-index" "kraken-origin" "kraken-proxy" "kraken-testfs" "kraken-trackers")
+IMGS=( "kraken-agent" "kraken-build-index" "kraken-origin" "kraken-proxy" "kraken-testfs" "kraken-tracker")
 CLIENT=${CLI:=podman}
 
 function usage() {

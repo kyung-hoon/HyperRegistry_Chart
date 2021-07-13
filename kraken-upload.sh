@@ -2,13 +2,13 @@
 set -e
 
 REG="tmaxcloudck"
-IMGS=( "kraken-agent" "kraken-build-index" "kraken-origin" "kraken-proxy" "kraken-testfs" "kraken-trackers")
+IMGS=( "kraken-agent" "kraken-build-index" "kraken-origin" "kraken-proxy" "kraken-testfs" "kraken-tracker")
 
 
 
 function usage() {
   echo "[Usage]: CLI=<registry_client(default: podman)> ./kraken-upload.sh <archive_dir_path> <registry_domain>"
-  echo "    ex): CLI=docker ./kraken-upload.sh ./downloads 172.22.11.2:5000"
+  echo "    ex): CLI=docker ./kraken-upload.sh ./kraken-downloads 172.22.11.2:5000"
 }
 
 if [ -z ${1} ];

@@ -69,7 +69,7 @@ metadata:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
 spec:
   rules:
-  - host: "proxy.{{ .Values.kind.ingressHostPrefix }}"
+  - host: "proxy.{{ .Values.ingress.ingressHostPrefix }}"
     http:
       paths:
       - pathType: Prefix

@@ -16,8 +16,8 @@
 
    1. Kraken 이미지 다운로드
       ```bash
-      chmod +x ./kraken/kraken-download.sh
-      ./kraken/kraken-download.sh <download_dir> # ./download.sh ./downloads
+      chmod +x ./kraken-download.sh
+      ./kraken-download.sh <download_dir> # ./kraken-download.sh ./kraken-downloads
       ```
    2. Helm 클라이언트 다운로드 (Prerequsite - helm 참조)
 
@@ -25,8 +25,8 @@
 
 3. 폐쇄망 환경의 레지스트리에 이미지 업로드
    ```bash
-   chmod +x ./kraken/kraken-upload.sh
-   ./kraken/kraken-upload.sh <download_dir> <registry> # ./update.sh ./downloads 172.22.11.2:5000
+   chmod +x ./kraken-upload.sh
+   ./kraken-upload.sh <download_dir> <registry> # ./kraken-update.sh ./kraken-downloads 172.22.11.2:5000
    ```
 
 ### 설치

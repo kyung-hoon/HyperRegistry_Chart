@@ -48,7 +48,9 @@
 ### 설치
 
 1. values.yaml 수정
-   - sed 's/**REPO**/<registry>/' values.yaml.tpl > values.yaml
+   ```bash
+   sed 's/__REPO__/<registry>/' ./hyperRegistry/values.yaml.tpl > ./hyperRegisty/values.yaml
+   ```
    - 다음 필드들의 domain 부분을 <인그레스컨트롤러\_EXTERNAL_SERVICE_IP>.nip.io로 변경
      - expose.ingress.hosts.core
        - core.harbor.domain -> core.harbor.172.22.11.2.nip.io
