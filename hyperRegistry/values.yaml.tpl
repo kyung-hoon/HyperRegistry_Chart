@@ -518,7 +518,7 @@ registry:
       privateKeySecret: "my-secret"
   
   notifications:
-    enabled: true
+    enabled: false
     endpoints:
       - name: kraken
         disabled: false

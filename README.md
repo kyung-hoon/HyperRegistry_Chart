@@ -8,6 +8,7 @@ This is helm repository for HyperReigstry
 - [설치](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/INSTALL.md#설치)
 - [HyperAuth OIDC 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/oidc.md)
 - [P2P Preheat 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/KRAKEN_GUIDE.md)
+- [외부 Registry Replication 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/replication.md)
 
 ## Usage
 

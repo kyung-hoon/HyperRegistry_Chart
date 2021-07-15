@@ -1,6 +1,6 @@
 # 설치 가이드
 
-## Prerequsite
+## Prerequisite
 
 - git (checked version: 1.8.3.1)
 - podman (checked version: v3.0.1)
@@ -49,7 +49,7 @@
 
 1. values.yaml 수정
    ```bash
-   sed 's/__REPO__/<registry>/' ./hyperRegistry/values.yaml.tpl > ./hyperRegisty/values.yaml
+   sed 's/__REPO__/<registry>/' ./hyperRegistry/values.yaml.tpl > ./hyperRegistry/values.yaml
    ```
    - 다음 필드들의 domain 부분을 <인그레스컨트롤러\_EXTERNAL_SERVICE_IP>.nip.io로 변경
      - expose.ingress.hosts.core
@@ -75,7 +75,7 @@
    ```
 3. 배포
    ```bash
-   helm install <name> .
+   helm install <name> ./hyperRegistry
    ```
 
 ## Trouble-Shoting
