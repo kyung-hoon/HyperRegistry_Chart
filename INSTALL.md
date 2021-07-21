@@ -48,9 +48,11 @@
 ### 설치
 
 1. values.yaml 수정
+
    ```bash
    sed 's/__REPO__/<registry>/' ./hyperRegistry/values.yaml.tpl > ./hyperRegistry/values.yaml
    ```
+
    - 다음 필드들의 domain 부분을 <인그레스컨트롤러\_EXTERNAL_SERVICE_IP>.nip.io로 변경
      - expose.ingress.hosts.core
        - core.harbor.domain -> core.harbor.172.22.11.2.nip.io
@@ -63,6 +65,11 @@
    - (옵션) ingress.class 설정
      - expose.ingress.annotations에 사용할 인그레스의 클래스 추가하기
        - ex) kubernetes.io/ingress.class: "nginx-shd"
+   - (외부 DB 사용 시) database 설정
+     - database.type : external
+     - database.external 값 db에 따라 수정
+     - [외부 HA DB 구성 방법](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/postgres_ha.md)
+
 2. 스토리지클래스 설정
    ```bash
    kubectl get storageclass
