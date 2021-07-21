@@ -3,12 +3,12 @@ set -e
 
 
 REG="docker.io/bitnami"
-IMGS=( "postgresql-repmgr:13.3.0-debian-10-r53" "pgpool:4.2.3-debian-10-r50" "postgres-exporter:0.10.0-debian-10-r4" "bitnami-shell:10-debian-10-r131")
+IMGS=( "redis:6.2.4-debian-10-r13" "redis-sentinel:6.2.4-debian-10-r14" "redis-exporter:1.24.0-debian-10-r9" "redis-sentinel-exporter:1.7.1-debian-10-r161"  "bitnami-shell:10-debian-10-r112" )
 CLIENT=${CLI:=podman}
 
 function usage() {
-  echo "[Usage]: CLI=<registry_client(default: podman)> ./postgres-download.sh <save_dir>(default: downloads)"
-  echo "    ex): CLI=docker ./postgres-download.sh archive"
+  echo "[Usage]: CLI=<registry_client(default: podman)> ./redis-download.sh <save_dir>(default: downloads)"
+  echo "    ex): CLI=docker ./redis-download.sh archive"
 }
 
 function check_client() {
@@ -37,9 +37,9 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 for IMG in "${IMGS[@]}"; do
-  echo -e  "${BLUE}Pulling image ${REG}/${IMG}:${TAG}${NC}"
-  ${CLIENT} pull "${REG}/${IMG}:${TAG}"
+  echo -e  "${BLUE}Pulling image ${REG}/${IMG}${NC}"
+  ${CLIENT} pull "${REG}/${IMG}"
   echo -e ${IMG/:/-}
   ${CLIENT} save "${REG}/${IMG}" -o "${SAVEDIR}/${IMG/:/_}.tar"
-  echo -e  "${RED}Saved to ${SAVEDIR}/${IMG}_${TAG}.tar${NC}"
+  echo -e  "${RED}Saved to ${SAVEDIR}/${SAVEIMG}.tar${NC}"
 done
