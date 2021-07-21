@@ -40,7 +40,7 @@
 
    1. Servers > Create > Server
    2. General탭 Name 설정
-   3. Connection 탭 Host name/address 설정=> pgpool pod의 IP (kubectl get pod -o wide <podname> -n <namespace>)
+   3. Connection 탭 Host name/address 설정=> pgpool pod의 IP (kubectl get pod -o wide < podname > -n < namespace >)
    4. Password
       ```bash
       kubectl get secret --namespace default postgres-postgresql-ha-postgresql -o jsonpath="{.data.   repmgr-password}" | base64 --decode)

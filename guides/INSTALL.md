@@ -66,9 +66,17 @@
      - expose.ingress.annotations에 사용할 인그레스의 클래스 추가하기
        - ex) kubernetes.io/ingress.class: "nginx-shd"
    - (외부 DB 사용 시) database 설정
+     - [외부 HA DB 구성 방법](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/guides/postgres_ha.md)
      - database.type : external
      - database.external 값 db에 따라 수정
-     - [외부 HA DB 구성 방법](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/postgres_ha.md)
+   - (외부 Redis 사용 시) Redis 설정
+     - [외부 HA REDIS 구성 방법](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/guides/redis_ha.md)
+     - redis.type : external
+     - redis.external 값 redis에 따라 수정
+       - addr : pod의 주소:26379 (ex. 10.244.166.186:26379,10.244.33.190:26379,10.244.135.46:26379)
+       - sentinelMasterSet: "mymaster"
+       - password: kubectl get secret --namespace default redis-ha -o jsonpath="{.data.redis-password}" | base64 --decode 의 값
+       -
 
 2. 스토리지클래스 설정
    ```bash
