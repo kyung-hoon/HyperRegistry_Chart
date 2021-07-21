@@ -37,9 +37,8 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 for IMG in "${IMGS[@]}"; do
-  echo -e  "${BLUE}Pulling image ${REG}/${IMG}:${TAG}${NC}"
-  ${CLIENT} pull "${REG}/${IMG}:${TAG}"
-  echo -e ${IMG/:/-}
+  echo -e  "${BLUE}Pulling image ${REG}/${IMG}${NC}"
+  ${CLIENT} pull "${REG}/${IMG}"
   ${CLIENT} save "${REG}/${IMG}" -o "${SAVEDIR}/${IMG/:/_}.tar"
-  echo -e  "${RED}Saved to ${SAVEDIR}/${IMG}_${TAG}.tar${NC}"
+  echo -e  "${RED}Saved to ${SAVEDIR}/${IMG/:/_}.tar${NC}"
 done
