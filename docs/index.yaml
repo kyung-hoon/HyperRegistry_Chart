@@ -20,6 +20,6 @@ entries:
     sources:
     - https://github.com/tmax-cloud/HyperRegistry
     urls:
-    - HyperRegistry-0.0.1.tgz
+    - HyperRegistry-v2.2.2.tgz
     version: 0.0.1
 generated: "2021-08-09T11:23:18.4245277+09:00"
