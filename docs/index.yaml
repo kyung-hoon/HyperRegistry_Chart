@@ -3,10 +3,10 @@ entries:
   HyperRegistry:
   - apiVersion: v1
     appVersion: 2.2.2
-    created: "2021-08-09T11:23:18.4304311+09:00"
+    created: "2021-08-09T12:37:14.0554971+09:00"
     description: An open source trusted cloud native registry that stores, signs,
       and scans content
-    digest: b19a894ee5f0ff96db2d0d83c3fd37d5e7ff7271ac43762316223acaac44d2a6
+    digest: f5e131e7c5c72594c56318f68b606a2aaa7041db227753df0d2bb22f7efe20a4
     home: https://github.com/tmax-cloud
     icon: https://raw.githubusercontent.com/tmax-cloud/HyperRegistry/master/icons/hyperregistry-logo.png
     keywords:
@@ -20,6 +20,6 @@ entries:
     sources:
     - https://github.com/tmax-cloud/HyperRegistry
     urls:
-    - HyperRegistry-v2.2.2.tgz
+    - hyperregistry-v2.2.2.tgz
     version: 0.0.1
-generated: "2021-08-09T11:23:18.4245277+09:00"
+generated: "2021-08-09T12:37:14.0522808+09:00"
