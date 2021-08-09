@@ -46,6 +46,9 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       automountServiceAccountToken: false
+{{- if .Values.priorityClass }}
+      priorityClassName: {{ .Values.priorityClass }}
+{{- end }}
       containers:
       - name: chartmuseum
         image: {{ .Values.chartmuseum.image.repository }}:{{ .Values.chartmuseum.image.tag }}

@@ -34,6 +34,9 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+{{- if .Values.priorityClass }}
+      priorityClassName: {{ .Values.priorityClass }}
+{{- end }}
       automountServiceAccountToken: false
       containers:
       - name: redis

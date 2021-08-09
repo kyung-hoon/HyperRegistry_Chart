@@ -35,6 +35,9 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       automountServiceAccountToken: false
+{{- if .Values.priorityClass }}
+      priorityClassName: {{ .Values.priorityClass }}
+{{- end }}
       containers:
       - name: notary-server
         image: {{ .Values.notary.server.image.repository }}:{{ .Values.notary.server.image.tag }}

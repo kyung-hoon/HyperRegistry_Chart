@@ -331,6 +331,8 @@ imagePullSecrets:
 updateStrategy:
   type: RollingUpdate
 
+priorityClass: ""
+
 # debug, info, warning, error or fatal
 logLevel: info
 
