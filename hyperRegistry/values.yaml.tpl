@@ -35,8 +35,8 @@ expose:
       notarySecretName: ""
   ingress:
     hosts:
-      core: core.harbor.domain
-      notary: notary.harbor.domain
+      core: core.hr.domain
+      notary: notary.hr.domain
     # set to the type of ingress controller if it has specific requirements.
     # leave as `default` for most ingress controllers.
     # set to `gce` if using the GCE ingress controller
@@ -110,7 +110,7 @@ expose:
 # the IP address of k8s node
 #
 # If Harbor is deployed behind the proxy, set it as the URL of proxy
-externalURL: https://core.harbor.domain
+externalURL: https://core.hr.domain
 
 # The internal TLS used for harbor components secure communicating. In order to enable https
 # in each components tls cert files need to provided in advance.
@@ -516,7 +516,7 @@ registry:
       # The secret key that should be present is CLOUDFRONT_KEY_DATA, which should be the encoded private key
       # that allows access to CloudFront
       privateKeySecret: "my-secret"
-  
+
   notifications:
     enabled: false
     endpoints:
