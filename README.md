@@ -4,13 +4,13 @@ This is helm repository for HyperReigstry
 
 ## Installation
 
-- [폐쇄망 환경 준비](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/guides/INSTALL.md#폐쇄망에서-설치를-위한-환경-준비하기)
-- [설치](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/guides/INSTALL.md#설치)
-- [HyperAuth OIDC 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/guides/oidc.md)
-- [P2P Preheat 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/guides/KRAKEN_GUIDE.md)
-- [외부 Registry Replication 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/guides/replication.md)
-- [외부 HA DB 구성](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/guides/postgres_ha.md)
-- [외부 HA REDIS 구성](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/guides/redis_ha.md)
+- [폐쇄망 환경 준비](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/install.md#폐쇄망에서-설치를-위한-환경-준비하기)
+- [설치](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/install.md#설치)
+- [HyperAuth OIDC 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/oidc.md)
+- [P2P Preheat 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/kraken.md)
+- [외부 Registry Replication 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/replication.md)
+- [외부 HA DB 구성](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/postgres.md)
+- [외부 HA REDIS 구성](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/redis.md)
 
 ## Usage
 
