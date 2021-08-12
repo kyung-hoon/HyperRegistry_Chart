@@ -1,9 +1,7 @@
 # HyperRegistry-Chart
-
 This is helm repository for HyperReigstry
 
 ## Installation
-
 - [폐쇄망 환경 준비](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/install.md#폐쇄망에서-설치를-위한-환경-준비하기)
 - [설치](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/install.md#설치)
 - [HyperAuth OIDC 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/oidc.md)
@@ -13,9 +11,7 @@ This is helm repository for HyperReigstry
 - [외부 HA REDIS 구성](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/redis.md)
 
 ## Usage
-
 ### 레지스트리 생성 및 설정하기
-
 1. 포털 로그인 (https://core.harbor.domain)
 2. 프로젝트 생성하기
    1. Projects > New Project 클릭
@@ -35,9 +31,7 @@ This is helm repository for HyperReigstry
    4. [생성한 유저 이름] 입력 및 권한 설정 후 OK
 
 ### 신뢰하는 서버로 등록하기
-
 **[NOTE] Harbor로부터 이미지를 pull받을 모든 노드에 적용**
-
 1. 인증서(ca.crt) 다운로드
    1. Proejcts > [임의의 레지스트리] > Registry Certificate 클릭
 2. (모든 노드에) 인증서 등록
@@ -52,7 +46,7 @@ This is helm repository for HyperReigstry
         cp ca.crt /usr/local/share/ca-certificates
         update-ca-certificates
         ```
-3. 컨테이너런타임 재기동
+3. 컨테이너 런타임 재기동
    - Docker
      ```bash
      systemctl restart docker
@@ -63,7 +57,6 @@ This is helm repository for HyperReigstry
      ```
 
 ### 이미지 푸시하기
-
 ```bash
 podman login [harbor_domain]/[project] # podman login core.hr.172.10.0.2.nip.io/library
 podman tag [to_push_image] [harbor_domain]/[project]/[repository]:[tag]
@@ -71,7 +64,6 @@ podman push [harbor_domain]/[project]/[repository]:[tag]
 ```
 
 ### 이미지 풀하기
-
 ```bash
 podman pull [harbor_domain]/[project]/[repository]:[tag]
 ```
