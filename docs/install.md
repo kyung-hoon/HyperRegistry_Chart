@@ -55,11 +55,11 @@
 
    - 다음 필드들의 domain 부분을 <인그레스컨트롤러\_EXTERNAL_SERVICE_IP>.nip.io로 변경
      - expose.ingress.hosts.core
-       - core.harbor.domain -> core.harbor.172.22.11.2.nip.io
+       - core.hr.domain -> core.hr.172.22.11.2.nip.io
      - expose.ingress.hosts.notray
-       - notary.harbor.domain -> notary.harbor.172.22.11.2.nip.io
+       - notary.hr.domain -> notary.hr.172.22.11.2.nip.io
      - externalURL
-       - https://core.harbor.domain -> https://core.harbor.172.22.11.2.nip.io
+       - https://core.hr.domain -> https://core.hr.172.22.11.2.nip.io
      - registry.notifications.url
        - http://proxy.kraken.domain/registry/notification -> http://proxy.kraken.172.22.11.2.nip.io/registry/notification
    - (옵션) ingress.class 설정

@@ -23,7 +23,7 @@
    1. Access Type: confidential 선택
    2. Valid Redirect URIs 입력 
       ```text
-      https://<harbor_domain>/c/oidc/callback  (2.3 화면에서 save 버튼 위에 나타난 URL)
+      https://<hyperregistry_domain>/c/oidc/callback  (2.3 화면에서 save 버튼 위에 나타난 URL)
       ```
    3. (생성된) Credentials 탭에서 Secret 값 복사 (2.4의 [secret])
    4. Client Scopes > Default Client Scopes에서 3.2에서 생성한 이름 클릭 후 Add selected 클릭 
@@ -38,9 +38,9 @@
    5. Groups > Available Groups에서 6.에서 생성한 그룹 선택 후 Join
 
 
-### 2. Harbor에 설정하기
+### 2. HyperRegistry에 설정하기
 
-1. Harbor 접속 및 관리자 로그인(admin/ admin)
+1. HyperRegistry 접속 및 관리자 로그인(admin/ admin)
 2. (LNB) Administration > Configuration 클릭
 3. Auth Mode: OIDC 선택
 4. 다음 설정값 입력

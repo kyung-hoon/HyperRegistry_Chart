@@ -62,7 +62,7 @@
 
 ### 사용
 
-1. 포털 로그인 ex) https://core.harbor.domain
+1. 포털 로그인 ex) https://core.hr.domain
 2. Instance 생성
    1. Administration > Distributions > + NEW INSTANCE 클릭
    2. 파라미터 설정
@@ -84,7 +84,7 @@
    1. Trigger: manual => 생성한 policy 선택 > Action > Execute
 5. Image pull
    - Kraken agent는 default로 30081 포트 사용
-   - ex) crictl pull core.harbor.domain.nip.io/library/busybox:latest => crictl pull 127.0.0.1:30081/library/busybox
+   - ex) crictl pull core.hr.domain.nip.io/library/busybox:latest => crictl pull 127.0.0.1:30081/library/busybox
 
 ### 참고
 
