@@ -8,7 +8,7 @@
 ## Installation
 1. (외부망 환경에서) Redis + Sentinel 이미지 다운로드
    ```bash
-   cd ./contrib/redis
+   cd ${REPO_HOME}/contrib/redis # REPO_HOME is HyperRegistry-Chart's home path
    chmod +x ./redis-download.sh
    ./redis-download.sh <download_dir> # ./redis-download.sh ./redis-downloads
    ```
@@ -23,5 +23,5 @@
    - 파라미터 수정 ([참조](https://github.com/bitnami/charts/tree/309c7c6e5eaab649a1f878c2f59198510086ef37/bitnami/redis#parameters))
 5. 설치
    ```bash
-   helm install <release_name> ./redis
+   helm install <release_name> .
    ```

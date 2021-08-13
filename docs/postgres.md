@@ -10,7 +10,7 @@
 ## Installation
 1. (외부망 환경에서) Postgresql 이미지 다운로드
    ```bash
-   cd ./contrib/postgresql
+   cd ${REPO_HOME}/contrib/postgresql # REPO_HOME is HyperRegistry-Chart's home path
    chmod +x ./postgres-download.sh
    ./postgres-download.sh <download_dir> # ./postgres-download.sh ./postgres-downloads
    ```
@@ -29,7 +29,7 @@
    - volumePermissionsImage.tag
 5. 설치
    ```bash
-   helm install <release_name> ./postgresql-ha
+   helm install <release_name> .
    ```
 
 ### DB 생성
