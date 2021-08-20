@@ -29,6 +29,7 @@
 2. git repo 전체(다운로드한 이미지 포함)를 내부망으로 복사
 
 3. 패키지 및 유틸리티 설치
+   
    ```bash
    cd <copied_repo>
    sudo cp <helm_binary> /usr/local/bin
@@ -47,28 +48,47 @@
 ### 2. 설치
 
 1. values.yaml 수정
+   
    - 이미지 레지스트리 소스 설정
-   ```bash
-   sed 's/__REPO__/<registry>/' ./values.yaml.tpl > ./values.yaml
-   ```
+     
+      ```bash
+      sed 's/__REPO__/<registry>/' ./values.yaml.tpl > ./values.yaml
+      ```
+   
    - 도메인 설정
-     - **expose.ingress.hosts.core**: core.hr.domain -> core.hr.172.22.11.2.nip.io
-     - **expose.ingress.hosts.notray**: notary.hr.domain -> notary.hr.172.22.11.2.nip.io
-     - **externalURL**: https://core.hr.domain -> https://core.hr.172.22.11.2.nip.io
-     - **registry.notifications.url**: http://proxy.kraken.domain/registry/notification -> http://proxy.kraken.172.22.11.2.nip.io/registry/notification
-   - ingress 클래스 설정
-     - **expose.ingress.annotations**: kubernetes.io/ingress.class: "nginx-shd"
+
+     1. Ingress를 사용할 경우
+        - **expose.ingress.hosts.core**: `core.hr.<ingress_external_IP>.nip.io`
+        - **expose.ingress.hosts.notray**: `notary.hr.<ingress_external_IP>.nip.io`
+        - **expose.ingress.annotations**: `kubernetes.io/ingress.class: "nginx-shd"`
+        - **externalURL**: `https://core.hr.<ingress_external_IP>.nip.io`
+
+     2. LoadBalancer를 사용할 경우
+        - **expose.type**: `loadBalancer`
+        - **expose.tls.commonName**: `loadBalancer의 externalIP`
+        - **externalURL**: `https://loadBalancer의 externalIP`
+
+     3. NodePort를 사용할 경우
+        - **expose.type**: `nodePort`
+        - **expose.tls.commonName**: `cluster노드 IP 중 택일`
+        - **externalURL**: `https://<expose.tls.commonName>:<expose.nodePort.ports.https.nodePort>`
+
    - 레지스트리 스토리지 용량 설정
-     - **persistence.persistentVolumeClaim.registry.size**: 5Gi -> <as_big_as_your_wants>
+     - **persistence.persistentVolumeClaim.registry.size**: `500Gi` (as big as your needs)
+
    - (Optional) [Database HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/postgres.md) 구성 시
      - **database.type** : external
      - **database.external**: 
+
    - (Optional) [Redis HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/redis.md) 구성 시
      - **redis.type** : external
      - **redis.external**: 
        - addr : pod의 주소:26379 (ex. 10.244.166.186:26379,10.244.33.190:26379,10.244.135.46:26379)
        - sentinelMasterSet: "mymaster"
        - password: kubectl get secret --namespace default redis-ha -o jsonpath="{.data.redis-password}" | base64 --decode 의 값
+
+   - (Optional) [Kraken](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/kraken.md) 구성 시
+     - **registry.notifications.url**: http://proxy.kraken.domain/registry/notification -> http://proxy.kraken.172.22.11.2.nip.io/registry/notification
 
 2. 스토리지클래스 설정
 
