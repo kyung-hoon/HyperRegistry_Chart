@@ -65,30 +65,30 @@
 
      2. LoadBalancer를 사용할 경우
         - **expose.type**: `loadBalancer`
-        - **expose.tls.commonName**: `loadBalancer의 externalIP`
+        - **expose.tls.auto.commonName**: `loadBalancer의 externalIP`
         - **externalURL**: `https://loadBalancer의 externalIP`
 
      3. NodePort를 사용할 경우
         - **expose.type**: `nodePort`
-        - **expose.tls.commonName**: `cluster노드 IP 중 택일`
+        - **expose.tls.auto.commonName**: `cluster노드 IP 중 택일`
         - **externalURL**: `https://<expose.tls.commonName>:<expose.nodePort.ports.https.nodePort>`
 
    - 레지스트리 스토리지 용량 설정
      - **persistence.persistentVolumeClaim.registry.size**: `500Gi` (as big as your needs)
 
    - (Optional) [Database HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/postgres.md) 구성 시
-     - **database.type** : external
+     - **database.type** : `external`
      - **database.external**: 
 
    - (Optional) [Redis HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/redis.md) 구성 시
-     - **redis.type** : external
+     - **redis.type** : `external`
      - **redis.external**: 
        - addr : pod의 주소:26379 (ex. 10.244.166.186:26379,10.244.33.190:26379,10.244.135.46:26379)
        - sentinelMasterSet: "mymaster"
        - password: kubectl get secret --namespace default redis-ha -o jsonpath="{.data.redis-password}" | base64 --decode 의 값
 
    - (Optional) [Kraken](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/kraken.md) 구성 시
-     - **registry.notifications.url**: http://proxy.kraken.domain/registry/notification -> http://proxy.kraken.172.22.11.2.nip.io/registry/notification
+     - **registry.notifications.url**: `http://proxy.kraken.172.22.11.2.nip.io/registry/notification`
 
 2. 스토리지클래스 설정
 
