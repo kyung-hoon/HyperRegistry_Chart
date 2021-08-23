@@ -54,7 +54,8 @@
       ```bash
       sed 's/__REPO__/<registry>/' ./values.yaml.tpl > ./values.yaml
       ```
-   
+        > public망에 접근가능한 환경에 설치할 경우 registry에 `tmaxcloudck` 입력
+
    - 도메인 설정
 
      1. Ingress를 사용할 경우
