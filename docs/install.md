@@ -50,7 +50,7 @@
 1. values.yaml 수정
    
    - 이미지 레지스트리 소스 설정
-     
+    
       ```bash
       sed 's/__REPO__/<registry>/' ./values.yaml.tpl > ./values.yaml
       ```
