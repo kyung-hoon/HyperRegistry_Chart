@@ -54,41 +54,63 @@
       ```bash
       sed 's/__REPO__/<registry>/' ./values.yaml.tpl > ./values.yaml
       ```
+     
+   - 별도로 생성한 서버 인증서를 사용할 경우 (HTTPS 인증서)
    
-   - 도메인 설정
+      1. 인증서와 키를 담은 시크릿 생성
+      ```bash
+      kubectl create secret tls <core_secret_name> --cert=path/to/cert/core_cert_file --key=path/to/key/core_key_file
+      kubectl create secret tls <notary_secret_name> --cert=path/to/cert/notary_cert_file --key=path/to/key/notary_key_file
+      ```
 
-     1. Ingress를 사용할 경우
-        - **expose.ingress.hosts.core**: `core.hr.<ingress_external_IP>.nip.io`
-        - **expose.ingress.hosts.notray**: `notary.hr.<ingress_external_IP>.nip.io`
-        - **expose.ingress.annotations**: `kubernetes.io/ingress.class: "nginx-shd"`
-        - **externalURL**: `https://core.hr.<ingress_external_IP>.nip.io`
+     2. values.yaml 설정
+       - **expose.tls.certSource**: `secret`
+       - **expose.tls.secret.secretName**: `<core_secret_name>`
+       - **expose.tls.secret.notarySecretName**: `<notary_secret_name>`
+     
+  - 도메인 설정
 
-     2. LoadBalancer를 사용할 경우
-        - **expose.type**: `loadBalancer`
-        - **expose.tls.auto.commonName**: `loadBalancer의 externalIP`
-        - **externalURL**: `https://loadBalancer의 externalIP`
+    1. Ingress를 사용할 경우
+       1. 자동으로 자체 발급한 인증서를 사용할 경우 
+          - **expose.type**: `ingress`
+          - **expose.ingress.hosts.core**: `core.hr.<ingress_external_IP>.nip.io`
+          - **expose.ingress.hosts.notray**: `notary.hr.<ingress_external_IP>.nip.io`
+          - **expose.ingress.annotations**: `kubernetes.io/ingress.class: "nginx-shd"`
+          - **externalURL**: `https://core.hr.<ingress_external_IP>.nip.io`
+           
+       2. 외부에서 발행한 인증서를 사용할 경우
+          - **expose.type**: `ingress`
+          - **expose.ingress.hosts.core**: `<core의 도메인이름> ex) core.hyperregistry.hypercloud.com`
+          - **expose.ingress.hosts.notray**: `<notary의 도메인이름> ex) notary.hyperregistry.hypercloud.com`
+          - **expose.ingress.annotations**: `kubernetes.io/ingress.class: "nginx-shd"`
+          - **externalURL**: `https://<core의 도메인이름> ex) https://core.hyperregistry.hypercloud.com`
+           
+    2. LoadBalancer를 사용할 경우
+       - **expose.type**: `loadBalancer`
+       - **expose.tls.auto.commonName**: `loadBalancer의 externalIP`
+       - **externalURL**: `https://loadBalancer의 externalIP`
 
-     3. NodePort를 사용할 경우
-        - **expose.type**: `nodePort`
-        - **expose.tls.auto.commonName**: `cluster노드 IP 중 택일`
-        - **externalURL**: `https://<expose.tls.commonName>:<expose.nodePort.ports.https.nodePort>`
+    3. NodePort를 사용할 경우
+       - **expose.type**: `nodePort`
+       - **expose.tls.auto.commonName**: `cluster노드 IP 중 택일`
+       - **externalURL**: `https://<expose.tls.commonName>:<expose.nodePort.ports.https.nodePort>`
 
-   - 레지스트리 스토리지 용량 설정
-     - **persistence.persistentVolumeClaim.registry.size**: `500Gi` (as big as your needs)
+  - 레지스트리 스토리지 용량 설정
+    - **persistence.persistentVolumeClaim.registry.size**: `500Gi` (as big as your needs)
 
-   - (Optional) [Database HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/postgres.md) 구성 시
-     - **database.type** : `external`
-     - **database.external**: 
+  - (Optional) [Database HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/postgres.md) 구성 시
+    - **database.type** : `external`
+    - **database.external**: 
 
-   - (Optional) [Redis HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/redis.md) 구성 시
-     - **redis.type** : `external`
-     - **redis.external**: 
-       - addr : pod의 주소:26379 (ex. 10.244.166.186:26379,10.244.33.190:26379,10.244.135.46:26379)
-       - sentinelMasterSet: "mymaster"
-       - password: kubectl get secret --namespace default redis-ha -o jsonpath="{.data.redis-password}" | base64 --decode 의 값
+  - (Optional) [Redis HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/redis.md) 구성 시
+    - **redis.type** : `external`
+    - **redis.external**: 
+      - addr : pod의 주소:26379 (ex. 10.244.166.186:26379,10.244.33.190:26379,10.244.135.46:26379)
+      - sentinelMasterSet: "mymaster"
+      - password: kubectl get secret --namespace default redis-ha -o jsonpath="{.data.redis-password}" | base64 --decode 의 값
 
-   - (Optional) [Kraken](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/kraken.md) 구성 시
-     - **registry.notifications.url**: `http://proxy.kraken.172.22.11.2.nip.io/registry/notification`
+  - (Optional) [Kraken](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/kraken.md) 구성 시
+    - **registry.notifications.url**: `http://proxy.kraken.172.22.11.2.nip.io/registry/notification`
 
 2. 스토리지클래스 설정
 
