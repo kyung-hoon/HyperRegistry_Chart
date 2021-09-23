@@ -9,6 +9,7 @@ This is helm repository for HyperReigstry
 - [외부 Registry Replication 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/replication.md)
 - [외부 HA DB 구성](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/postgres.md)
 - [외부 HA REDIS 구성](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/redis.md)
+- [이미지 서명 가이드 (Download pptx)](https://tmaxcloud-ck1-2.s3.ap-northeast-2.amazonaws.com/%EC%9D%B4%EB%AF%B8%EC%A7%80+%EC%84%9C%EB%AA%85.pptx)
 
 ## Usage
 ### 레지스트리 생성 및 설정하기
