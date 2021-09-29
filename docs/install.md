@@ -130,7 +130,7 @@
 3. 배포
 
    ```bash
-   helm install <release_name> .
+   helm install <release_name> . -n <namespace> --create-namespace
    ```
 
 ## Trouble-Shoting
