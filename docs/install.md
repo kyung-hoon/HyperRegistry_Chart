@@ -96,9 +96,12 @@
           - **expose.tls.auto.commonName**: `cluster노드 IP 중 택일`
           - **externalURL**: `https://<expose.tls.commonName>:<expose.nodePort.ports.https.nodePort>`
 
+   - 로그 레벨 설정
+     - **loglevel**: `debug`, `info`, `warning`, `error`, `fatal` 중 1
+
    - 레지스트리 스토리지 용량 설정
      - **persistence.persistentVolumeClaim.registry.size**: `500Gi` (as big as your needs)
-
+     
    - (Optional) [Database HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/postgres.md) 구성 시
      - **database.type** : `external`
      - **database.external**: 
