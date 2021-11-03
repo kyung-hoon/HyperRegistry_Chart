@@ -34,7 +34,7 @@ expose:
       # Only needed when the "expose.type" is "ingress".
       notarySecretName: ""
   ingress:
-    class: ""
+    class: "tmax-cloud"
     hosts:
       core: core.hr.domain
       notary: notary.hr.domain
@@ -43,6 +43,8 @@ expose:
     # set to `gce` if using the GCE ingress controller
     # set to `ncp` if using the NCP (NSX-T Container Plugin) ingress controller
     controller: default
+    labels:
+      ingress.tmaxcloud.org/name: hyperregistry
     annotations:
       # note different ingress controllers may require a different ssl-redirect annotation
       # for Envoy, use ingress.kubernetes.io/force-ssl-redirect: "true" and remove the nginx lines below
@@ -50,6 +52,7 @@ expose:
       ingress.kubernetes.io/proxy-body-size: "0"
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "0"
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure
   clusterIP:
     # The name of ClusterIP service
     name: harbor
