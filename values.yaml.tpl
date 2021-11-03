@@ -34,6 +34,7 @@ expose:
       # Only needed when the "expose.type" is "ingress".
       notarySecretName: ""
   ingress:
+    class: ""
     hosts:
       core: core.hr.domain
       notary: notary.hr.domain
@@ -49,7 +50,6 @@ expose:
       ingress.kubernetes.io/proxy-body-size: "0"
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "0"
-      kubernetes.io/ingress.class: "nginx-shd"
   clusterIP:
     # The name of ClusterIP service
     name: harbor

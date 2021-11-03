@@ -52,6 +52,9 @@ metadata:
     {{- end }}
 {{- end }}
 spec:
+  {{- if ne .Values.expose.ingress.class "" }}
+  ingressClassName: {{ .Values.expose.ingress.class }}
+  {{- end }}
   {{- if $tls.enabled }}
   tls:
   - secretName: {{ template "harbor.tlsCoreSecretForIngress" . }}
@@ -159,6 +162,9 @@ metadata:
     {{- end }}
 {{- end }}
 spec:
+  {{- if ne .Values.expose.ingress.class "" }}
+  ingressClassName: {{ .Values.expose.ingress.class }}
+  {{- end }}
   {{- if $tls.enabled }}
   tls:
   - secretName: {{ template "harbor.tlsNotarySecretForIngress" . }}
