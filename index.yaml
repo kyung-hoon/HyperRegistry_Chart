@@ -2,10 +2,30 @@ apiVersion: v1
 entries:
   HyperRegistry:
   - apiVersion: v1
-    created: "2021-11-03T09:42:01.9700821+09:00"
+    created: "2021-11-11T12:43:44.0641314+09:00"
     description: An open source trusted cloud native registry that stores, signs,
       and scans content forked from Harbor
-    digest: e55ee68bb5f6f3bb881890b3712658f7343fe6ab6ecad0ba1a3b6068acc3fa54
+    digest: e4e171b08b1c3e25e8f84cb36bd9bf4f6a019b0d03de8c7409a47aeda5755523
+    home: https://github.com/tmax-cloud
+    icon: https://raw.githubusercontent.com/tmax-cloud/HyperRegistry/master/icons/hyperregistry-logo.png
+    keywords:
+    - docker
+    - registry
+    - harbor
+    maintainers:
+    - email: taejune_ahn@tmax.co.kr
+      name: taejune ahn
+    name: HyperRegistry
+    sources:
+    - https://github.com/tmax-cloud/HyperRegistry
+    urls:
+    - HyperRegistry-2.4.0-a-rc1.tgz
+    version: 2.4.0-a-rc1
+  - apiVersion: v1
+    created: "2021-11-11T12:43:44.044074+09:00"
+    description: An open source trusted cloud native registry that stores, signs,
+      and scans content forked from Harbor
+    digest: eac697cde8732925069f9a12cf69904bfa3324fb517dcdf05bdc570f2218e085
     home: https://github.com/tmax-cloud
     icon: https://raw.githubusercontent.com/tmax-cloud/HyperRegistry/master/icons/hyperregistry-logo.png
     keywords:
@@ -21,4 +41,25 @@ entries:
     urls:
     - HyperRegistry-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-03T09:42:01.9606707+09:00"
+  - apiVersion: v1
+    appVersion: 2.2.2
+    created: "2021-11-11T12:43:44.0673586+09:00"
+    description: An open source trusted cloud native registry that stores, signs,
+      and scans content
+    digest: 63da491dcdc77d7231fc1d8e280e2453127451e177727146e722627cc711fdde
+    home: https://github.com/tmax-cloud
+    icon: https://raw.githubusercontent.com/tmax-cloud/HyperRegistry/master/icons/hyperregistry-logo.png
+    keywords:
+    - docker
+    - registry
+    - harbor
+    maintainers:
+    - email: taejune_ahn@tmax.co.kr
+      name: taejune ahn
+    name: HyperRegistry
+    sources:
+    - https://github.com/tmax-cloud/HyperRegistry
+    urls:
+    - hyperregistry-v2.2.2.tgz
+    version: 0.0.1
+generated: "2021-11-11T12:43:44.0324006+09:00"
