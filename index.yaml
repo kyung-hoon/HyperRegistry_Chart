@@ -2,7 +2,27 @@ apiVersion: v1
 entries:
   HyperRegistry:
   - apiVersion: v1
-    created: "2021-11-11T14:19:29.0070083+09:00"
+    created: "2021-11-11T14:27:05.0460738+09:00"
+    description: An open source trusted cloud native registry that stores, signs,
+      and scans content forked from Harbor
+    digest: b3efe1712bb52ec3375f02526df7f4ace59ca29e3e86e6067f665144fd2c28c0
+    home: https://github.com/tmax-cloud
+    icon: https://raw.githubusercontent.com/tmax-cloud/HyperRegistry/master/icons/hyperregistry-logo.png
+    keywords:
+    - docker
+    - registry
+    - harbor
+    maintainers:
+    - email: taejune_ahn@tmax.co.kr
+      name: taejune ahn
+    name: HyperRegistry
+    sources:
+    - https://github.com/tmax-cloud/HyperRegistry
+    urls:
+    - HyperRegistry-2.4.0.tgz
+    version: 2.4.0
+  - apiVersion: v1
+    created: "2021-11-11T14:27:05.0391856+09:00"
     description: An open source trusted cloud native registry that stores, signs,
       and scans content forked from Harbor
     digest: e4e171b08b1c3e25e8f84cb36bd9bf4f6a019b0d03de8c7409a47aeda5755523
@@ -21,4 +41,25 @@ entries:
     urls:
     - HyperRegistry-2.4.0-a-rc1.tgz
     version: 2.4.0-a-rc1
-generated: "2021-11-11T14:19:28.9962637+09:00"
+  Superregistry:
+  - apiVersion: v1
+    created: "2021-11-11T14:27:05.0547241+09:00"
+    description: An open source trusted cloud native registry that stores, signs,
+      and scans content forked from Harbor
+    digest: 570d430534f853c94632b5ece7709c7f58466efae43fc28c622389a6b802b5ed
+    home: https://github.com/tmax-cloud
+    icon: https://raw.githubusercontent.com/tmax-cloud/HyperRegistry/master/icons/hyperregistry-logo.png
+    keywords:
+    - docker
+    - registry
+    - harbor
+    maintainers:
+    - email: taejune_ahn@tmax.co.kr
+      name: taejune ahn
+    name: Superregistry
+    sources:
+    - https://github.com/tmax-cloud/HyperRegistry
+    urls:
+    - Superregistry-2.4.0-a-rc1.tgz
+    version: 2.4.0-a-rc1
+generated: "2021-11-11T14:27:05.0291244+09:00"
