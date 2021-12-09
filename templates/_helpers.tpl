@@ -530,3 +530,16 @@ postgres://{{ template "harbor.database.username" . }}:{{ template "harbor.datab
     {{- include "harbor.nginx" . -}}
   {{- end -}}
 {{- end -}}
+
+{{- define "harbor.rbac.role" -}}
+  {{- printf "%s" (include "harbor.fullname" .) -}}
+{{- end -}}
+
+{{- define "harbor.rbac.roleBinding" -}}
+  {{- printf "%s" (include "harbor.fullname" .) -}}
+{{- end -}}
+
+{{- define "harbor.rbac.serviceAccount" -}}
+  {{- printf "%s" (include "harbor.fullname" .) -}}
+{{- end -}}
+
