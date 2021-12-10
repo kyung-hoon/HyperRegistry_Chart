@@ -7,7 +7,6 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: "{{ template "harbor.rbac.serviceAccount" . }}"
-  namespace: team-a
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
