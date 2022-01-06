@@ -76,14 +76,12 @@
              - **expose.type**: `ingress`
              - **expose.ingress.hosts.core**: `core.hr.<ingress_external_IP>.nip.io`
              - **expose.ingress.hosts.notray**: `notary.hr.<ingress_external_IP>.nip.io`
-             - **expose.ingress.annotations**: `kubernetes.io/ingress.class: "nginx-shd"`
              - **externalURL**: `https://core.hr.<ingress_external_IP>.nip.io`
            
           2. 외부에서 발행한 인증서를 사용할 경우
              - **expose.type**: `ingress`
              - **expose.ingress.hosts.core**: `<core의 도메인이름> ex) core.hyperregistry.hypercloud.com`
              - **expose.ingress.hosts.notray**: `<notary의 도메인이름> ex) notary.hyperregistry.hypercloud.com`
-             - **expose.ingress.annotations**: `kubernetes.io/ingress.class: "nginx-shd"`
              - **externalURL**: `https://<core의 도메인이름> ex) https://core.hyperregistry.hypercloud.com`
            
        2. LoadBalancer를 사용할 경우
@@ -113,6 +111,7 @@
          - **expose.ingress.labels**:
            - `""`
          - **expose.ingress.annotations**:
+           - `kubernetes.io/ingress.class: "nginx-shd"`
            - `nginx.ingress.kubernetes.io/ssl-redirect: "true"`
            - `nginx.ingress.kubernetes.io/proxy-body-size: "0"`
 
