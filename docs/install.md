@@ -58,17 +58,21 @@
 
    - 인증서 설정 (별도로 생성한 서버 인증서를 사용할 경우)
 
-       1. 인증서와 키를 담은 시크릿 생성
-      ```bash
-      kubectl create secret tls <core_secret_name> --cert=path/to/cert/core_cert_file --key=path/to/key/core_key_file
-      kubectl create secret tls <notary_secret_name> --cert=path/to/cert/notary_cert_file --key=path/to/key/notary_key_file
-      ```
+       1. self-signed 인증서를 사용할 경우
+          - **expose.tls.certSource**: `auto`
+          - **expose.tls.secret.secretName**: ""
+          - **expose.tls.secret.notarySecretName**: ""
 
-       2. values.yaml 설정
-       - **expose.tls.certSource**: `secret`
-       - **expose.tls.secret.secretName**: `<core_secret_name>`
-       - **expose.tls.secret.notarySecretName**: `<notary_secret_name>`
-   
+       2. 미리 만들어 둔 TLS 시크릿을 사용할 경우
+          - **expose.tls.certSource**: `secret`
+          - **expose.tls.secret.secretName**: `<core_secret_name>`
+          - **expose.tls.secret.notarySecretName**: `<notary_secret_name>`
+
+       3. API Gateway와 같은 프록시에서 제공하는 인증서를 사용할 경우
+          - **expose.tls.certSource**: `none`
+          - **expose.tls.secret.secretName**: ""
+          - **expose.tls.secret.notarySecretName**: ""
+     
    - 도메인 설정
 
        1. Ingress를 사용할 경우
