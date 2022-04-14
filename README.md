@@ -1,6 +1,11 @@
 # HyperRegistry-Chart
 This is helm repository for HyperReigstry
 
+## Notice
+* 해당 Hyperregistry chart는 2.4.0 이하의 버전만 관리하고 있습니다. 이후 버전은 아래의 링크로 이동바랍니다.
+* The Hyperregistry chart is managed only in version 2.4.0 or lower. For later versions, please go to the link below.
+* [Hyperregistry-chart 이동하기](https://github.com/tmax-cloud/harbor-helm)
+
 ## Installation
 - [폐쇄망 환경 준비](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/install.md#폐쇄망에서-설치를-위한-환경-준비하기)
 - [설치](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/install.md#설치)
