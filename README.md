@@ -1,5 +1,7 @@
-# HyperRegistry-Chart
+# HyperRegistry-Chart (Never Used)
 This is helm repository for HyperReigstry
+
+## [New Hyperregistry-Chart 이동하기](https://github.com/tmax-cloud/harbor-helm)
 
 ## Notice
 * 해당 Hyperregistry chart는 2.4.0 이하의 버전만 관리하고 있습니다. 이후 버전은 아래의 링크로 이동바랍니다.
